@@ -1,1 +1,11 @@
-<iframe src="{{ plugin_esp32camUI_url|escape }}" style="width: 100%; height: 600px; border: 1px solid #808080"></iframe>
+<!-- ko allowBindings: true -->
+<div style="width: 800px; height: 800px;" id="tab_plugin_esp32camUI">
+   <!-- ko if: use_src_iframe -->
+       <iframe id="Esp32CamUIIframe" src="{{ plugin_esp32camUI_url|escape }}" style="width: 100%; height: 600px; border: 1px solid #808080"></iframe>
+   <!-- /ko -->       
+   <!-- ko ifnot: use_src_iframe -->
+<!--       <span data-bind="text: html_to_display"></span> -->
+       <iframe id="Esp32CamUIIframe" data-bind="attr: { srcdoc: html_to_display}" style="width: 100%; height: 600px; border: 1px solid #808080"></iframe>
+   <!-- /ko --> 
+</div>
+<!-- /ko -->
